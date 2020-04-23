@@ -6,16 +6,16 @@
     <content>
         <introduction>
             <p>
-                Un des secteurs à la fois délicat et important lors d'un test
-                de site web reste la sécurité. Tester ces schémas est au coeur
+                Un des secteurs ï¿½ la fois dï¿½licat et important lors d'un test
+                de site web reste la sï¿½curitï¿½. Tester ces schï¿½mas est au coeur
                 des objectifs du testeur web de SimpleTest.
             </p>
         </introduction>
         <section name="basique" title="Authentification HTTP basique">
             <p>
-                Si vous allez chercher une page web protégée
-                par une authentification basique, vous hériterez d'une entête 401.
-                Nous pouvons représenter ceci par ce test...
+                Si vous allez chercher une page web protï¿½gï¿½e
+                par une authentification basique, vous hï¿½riterez d'une entï¿½te 401.
+                Nous pouvons reprï¿½senter ceci par ce test...
 <php><![CDATA[
 class AuthenticationTest extends WebTestCase {<strong>
     function test401Header() {
@@ -24,7 +24,7 @@ class AuthenticationTest extends WebTestCase {<strong>
     }</strong>
 }
 ]]></php>
-                Ce qui nous permet de voir les entêtes reçues...
+                Ce qui nous permet de voir les entï¿½tes reï¿½ues...
                 <div class="demo">
                     <h1>File test</h1>
 <pre style="background-color: lightgray; color: black"><![CDATA[
@@ -38,9 +38,9 @@ Content-Type: text/html; charset=iso-8859-1
                     <div style="padding: 8px; margin-top: 1em; background-color: green; color: white;">1/1 test cases complete.
                     <strong>0</strong> passes, <strong>0</strong> fails and <strong>0</strong> exceptions.</div>
                 </div>
-                Sauf que nous voulons éviter l'inspection visuelle,
+                Sauf que nous voulons ï¿½viter l'inspection visuelle,
                 on souhaite que SimpleTest puisse nous dire si oui ou non
-                la page est protégée. Voici un test en profondeur sur nos entêtes...
+                la page est protï¿½gï¿½e. Voici un test en profondeur sur nos entï¿½tes...
 <php><![CDATA[
 class AuthenticationTest extends WebTestCase {
     function test401Header() {
@@ -52,14 +52,14 @@ class AuthenticationTest extends WebTestCase {
 }
 ]]></php>
                 N'importe laquelle de ces assertions suffirait,
-                tout dépend de la masse de détails que vous souhaitez voir.
+                tout dï¿½pend de la masse de dï¿½tails que vous souhaitez voir.
             </p>
             <p>
                 La plupart du temps, nous ne souhaitons pas tester
-                l'authentification en elle-même, mais plutôt
-                les pages protégées par cette authentification.
-                Dès que la tentative d'authentification est reçue,
-                nous pouvons y répondre à l'aide d'une réponse d'authentification :
+                l'authentification en elle-mï¿½me, mais plutï¿½t
+                les pages protï¿½gï¿½es par cette authentification.
+                Dï¿½s que la tentative d'authentification est reï¿½ue,
+                nous pouvons y rï¿½pondre ï¿½ l'aide d'une rï¿½ponse d'authentification :
 <php><![CDATA[
 class AuthenticationTest extends WebTestCase {
     function testAuthentication() {
@@ -69,15 +69,15 @@ class AuthenticationTest extends WebTestCase {
     }
 }
 ]]></php>
-                Le nom d'utilisateur et le mot de passe seront désormais
-                envoyés à chaque requête vers ce répertoire
-                et ses sous-répertoires.
-                En revanche vous devrez vous authentifier à nouveau
-                si vous sortez de ce répertoire mais SimpleTest est assez
-                intelligent pour fusionner les sous-répertoires dans un même domaine.
+                Le nom d'utilisateur et le mot de passe seront dï¿½sormais
+                envoyï¿½s ï¿½ chaque requï¿½te vers ce rï¿½pertoire
+                et ses sous-rï¿½pertoires.
+                En revanche vous devrez vous authentifier ï¿½ nouveau
+                si vous sortez de ce rï¿½pertoire mais SimpleTest est assez
+                intelligent pour fusionner les sous-rï¿½pertoires dans un mï¿½me domaine.
             </p>
             <p>
-                Vous pouvez gagner une ligne en définissant
+                Vous pouvez gagner une ligne en dï¿½finissant
                 l'authentification au niveau de l'URL...
 <php><![CDATA[
 class AuthenticationTest extends WebTestCase {
@@ -88,31 +88,31 @@ class AuthenticationTest extends WebTestCase {
 }
 ]]></php>
                 Si votre nom d'utilisateur ou mot de passe comporte
-                des caractères spéciaux, alors n'oubliez pas de les encoder,
-                sinon la requête ne sera pas analysée correctement.
-                De plus cette entête ne sera pas envoyée aux
-                sous requêtes si vous la définissez avec une URL absolue.
+                des caractï¿½res spï¿½ciaux, alors n'oubliez pas de les encoder,
+                sinon la requï¿½te ne sera pas analysï¿½e correctement.
+                De plus cette entï¿½te ne sera pas envoyï¿½e aux
+                sous requï¿½tes si vous la dï¿½finissez avec une URL absolue.
                 Par contre si vous naviguez avec des URL relatives,
-                l'information d'authentification sera préservée.
+                l'information d'authentification sera prï¿½servï¿½e.
             </p>
             <p>
-                 Pour l'instant, seule l'authentification de base est implémentée
-                 et elle n'est réellement fiable qu'en tandem avec une connexion HTTPS.
-                 C'est généralement suffisant pour protéger
-                 le serveur testé des regards malveillants.
-                 Les authentifications Digest et NTLM pourraient être ajoutées prochainement.
+                 Pour l'instant, seule l'authentification de base est implï¿½mentï¿½e
+                 et elle n'est rï¿½ellement fiable qu'en tandem avec une connexion HTTPS.
+                 C'est gï¿½nï¿½ralement suffisant pour protï¿½ger
+                 le serveur testï¿½ des regards malveillants.
+                 Les authentifications Digest et NTLM pourraient ï¿½tre ajoutï¿½es prochainement.
             </p>
         </section>
         <section name="cookies" title="Cookies">
             <p>
-                L'authentification de base ne donne pas assez de contrôle
-                au développeur Web sur l'interface utilisateur.
-                Il y a de forte chance pour que cette fonctionnalité
-                soit codée directement dans l'architecture web
-                à grand renfort de cookies et de timeouts compliqués.
+                L'authentification de base ne donne pas assez de contrï¿½le
+                au dï¿½veloppeur Web sur l'interface utilisateur.
+                Il y a de forte chance pour que cette fonctionnalitï¿½
+                soit codï¿½e directement dans l'architecture web
+                ï¿½ grand renfort de cookies et de timeouts compliquï¿½s.
             </p>
             <p>
-                Commençons par un simple formulaire de connexion...
+                Commenï¿½ons par un simple formulaire de connexion...
 <pre><![CDATA[
 <form>
     Username:
@@ -122,20 +122,20 @@ class AuthenticationTest extends WebTestCase {
     <input type="submit" value="Log in" />
 </form>
 ]]></pre>
-                Lequel doit ressembler à...
+                Lequel doit ressembler ï¿½...
             </p>
             <p>
                 <form class="demo">
                     Username:
                     <input type="text" name="u" value="" /><br />
                     Password:
-                    <input type="password" name="p" value="" /><br />
+                    <input type="password" name="p" autocomplete="off" value="" /><br />
                     <input type="submit" value="Log in" />
                 </form>
             </p>
             <p>
                 Supposons que, durant le chargement de la page,
-                un cookie ait été inscrit avec un numéro d'identifiant de session.
+                un cookie ait ï¿½tï¿½ inscrit avec un numï¿½ro d'identifiant de session.
                 Nous n'allons pas encore remplir le formulaire,
                 juste tester que nous pistons bien l'utilisateur.
                 Voici le test...
@@ -147,15 +147,15 @@ class LogInTest extends WebTestCase {
     }
 }
 ]]></php>
-                Nous nous contentons ici de vérifier que le cookie a bien été défini.
-                Etant donné que sa valeur est plutôt énigmatique,
-                elle ne vaut pas la peine d'être testée.
+                Nous nous contentons ici de vï¿½rifier que le cookie a bien ï¿½tï¿½ dï¿½fini.
+                Etant donnï¿½ que sa valeur est plutï¿½t ï¿½nigmatique,
+                elle ne vaut pas la peine d'ï¿½tre testï¿½e.
             </p>
             <p>
-                Le reste du test est le même que dans n'importe quel autre formulaire,
+                Le reste du test est le mï¿½me que dans n'importe quel autre formulaire,
                 mais nous pourrions souhaiter nous assurer
-                que le cookie n'a pas été modifié depuis la phase de connexion.
-                Voici comment cela pourrait être testé :
+                que le cookie n'a pas ï¿½tï¿½ modifiï¿½ depuis la phase de connexion.
+                Voici comment cela pourrait ï¿½tre testï¿½ :
 <php><![CDATA[
 class LogInTest extends WebTestCase {
     ...
@@ -171,11 +171,11 @@ class LogInTest extends WebTestCase {
 }
 ]]></php>
                 Ceci confirme que l'identifiant de session
-                est identique avant et après la connexion.
+                est identique avant et aprï¿½s la connexion.
             </p>
             <p>
-                Nous pouvons même essayer de duper notre propre système
-                en créant un cookie arbitraire pour se connecter...
+                Nous pouvons mï¿½me essayer de duper notre propre systï¿½me
+                en crï¿½ant un cookie arbitraire pour se connecter...
 <php><![CDATA[
 class LogInTest extends WebTestCase {
     ...
@@ -187,12 +187,12 @@ class LogInTest extends WebTestCase {
     }
 }
 ]]></php>
-                Votre site est-il protégé contre ce type d'attaque ?
+                Votre site est-il protï¿½gï¿½ contre ce type d'attaque ?
             </p>
         </section>
         <section name="session" title="Sessions de navigateur">
             <p>
-                Si vous testez un système d'authentification,
+                Si vous testez un systï¿½me d'authentification,
                 la reconnexion par un utilisateur est un point sensible.
                 Essayons de simuler ce qui se passe dans ce cas :
 <php><![CDATA[
@@ -211,12 +211,12 @@ class LogInTest extends WebTestCase {
     }
 }
 ]]></php>
-                La méthode <code>WebTestCase::restart()</code> préserve les cookies
-                dont le timeout a expiré, mais conserve les cookies temporaires ou expirés.
-                Vous pouvez spécifier l'heure et la date de leur réactivation.
+                La mï¿½thode <code>WebTestCase::restart()</code> prï¿½serve les cookies
+                dont le timeout a expirï¿½, mais conserve les cookies temporaires ou expirï¿½s.
+                Vous pouvez spï¿½cifier l'heure et la date de leur rï¿½activation.
             </p>
             <p>
-                L'expiration des cookies peut être un problème.
+                L'expiration des cookies peut ï¿½tre un problï¿½me.
                 Si vous avez un cookie qui doit expirer au bout d'une heure,
                 nous n'allons pas mettre le test en veille en attendant
                 que le cookie expire...
@@ -224,7 +224,7 @@ class LogInTest extends WebTestCase {
             <p>
                 Afin de provoquer leur expiration,
                 vous pouvez dater manuellement les cookies,
-                avant le début de la session.
+                avant le dï¿½but de la session.
 <php><![CDATA[
 class LogInTest extends WebTestCase {
     ...
@@ -242,9 +242,9 @@ class LogInTest extends WebTestCase {
     }
 }
 ]]></php>
-                Après le redémarrage, les cookies seront plus vieux
+                Aprï¿½s le redï¿½marrage, les cookies seront plus vieux
                 d'une heure et que tous ceux dont la date d'expiration
-                sera passée auront disparus.
+                sera passï¿½e auront disparus.
             </p>
         </section>
     </content>
@@ -253,10 +253,10 @@ class LogInTest extends WebTestCase {
             Passer au travers d'une <a href="#basique">authentification HTTP basique</a>
         </link>
         <link>
-            Tester l'<a href="#cookies">authentification basée sur des cookies</a>
+            Tester l'<a href="#cookies">authentification basï¿½e sur des cookies</a>
         </link>
         <link>
-            Gérer les <a href="#session">sessions du navigateur</a> et les timeouts
+            Gï¿½rer les <a href="#session">sessions du navigateur</a> et les timeouts
         </link>
     </internal>
     <external>
@@ -264,18 +264,18 @@ class LogInTest extends WebTestCase {
             La page du projet SimpleTest sur <a href="http://sourceforge.net/projects/simpletest/">SourceForge</a>.
         </link>
         <link>
-            La page de téléchargement de SimpleTest sur <a href="http://www.lastcraft.com/simple_test.php">LastCraft</a>.
+            La page de tï¿½lï¿½chargement de SimpleTest sur <a href="http://www.lastcraft.com/simple_test.php">LastCraft</a>.
         </link>
         <link>
-            <a href="http://simpletest.org/api/">L'API du développeur pour SimpleTest</a> donne tous les détails sur les classes et les assertions disponibles.
+            <a href="http://simpletest.org/api/">L'API du dï¿½veloppeur pour SimpleTest</a> donne tous les dï¿½tails sur les classes et les assertions disponibles.
         </link>
     </external>
     <meta>
         <keywords>
-            développement logiciel,
+            dï¿½veloppement logiciel,
             programmation php,
-            php orienté client,
-            outils de développement logiciel,
+            php orientï¿½ client,
+            outils de dï¿½veloppement logiciel,
             tutorial php,
             scripts php gratuits,
             architecture,
@@ -283,24 +283,24 @@ class LogInTest extends WebTestCase {
             objets fantaise,
             php testing,
             php unit,
-            méthodologie,
-            développement piloté par les tests,
+            mï¿½thodologie,
+            dï¿½veloppement pilotï¿½ par les tests,
             outils tests html,
             tester des web pages,
             php objets fantaise,
             naviguer automatiquement sur des sites web,
-            test automatisé,
+            test automatisï¿½,
             scripting web,
             HTMLUnit,
             JWebUnit,
             phpunit,
             php unit testing,
             php web testing,
-            test unitaire de système d'authentification,
+            test unitaire de systï¿½me d'authentification,
             authentification HTTP,
             test de connexion,
             test d'authentification,
-            test de sécurité
+            test de sï¿½curitï¿½
         </keywords>
     </meta>
 </page>

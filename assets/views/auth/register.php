@@ -34,11 +34,11 @@
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" name="User[password]" class="form-control" id="password">
+                    <input type="password" name="User[password]" class="form-control" id="password" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="cpassword">Confirm Password</label>
-                    <input type="password" name="cpassworcontact_emaild" class="form-control" id="cpassword">
+                    <input type="password" name="cpassworcontact_emaild" class="form-control" id="cpassword" autocomplete="off">
                 </div>
                 
                 <div class="clearfix"></div>

@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                        <input type="password" maxlength="100" required name="password" class="form-control input-lg" placeholder="Password" id="password">
+                        <input type="password" maxlength="100" required name="password" class="form-control input-lg" placeholder="Password" id="password" autocomplete="off">
                     </div>
                 </div>
             </div>

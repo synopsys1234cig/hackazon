@@ -104,7 +104,7 @@ class Controller extends BaseController
             $this->root.'/order' => ['label' => 'Orders', 'link_class' => 'fa fa-shopping-cart fa-fw'],
             $this->root.'/coupon' => ['label' => 'Coupons', 'link_class' => 'fa fa-percent fa-fw'],
             $this->root.'/enquiry' => ['label' => 'Enquiries', 'link_class' => 'fa fa-life-saver fa-fw'],
-            $this->root.'/faq' => ['label' => 'Faq', 'link_class' => 'fa fa-question-circle fa-fw'],
+            // $this->root.'/faq' => ['label' => 'Faq', 'link_class' => 'fa fa-question-circle fa-fw'],
             $this->root.'/vulnerability' => ['label' => 'Vulnerability Config', 'link_class' => 'fa fa-question-circle fa-fw'],
             //$this->root.'/vulnerability/test' => ['label' => 'Vulnerability Calculator', 'link_class' => 'fa fa-question-circle fa-fw'],
             //$this->root.'/vulnerability/matrix' => ['label' => 'Vulnerability Matrix', 'link_class' => 'fa fa-th fa-fw'],

@@ -50,13 +50,13 @@
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                        <input type="password" maxlength="100" required name="password" id="password"
+                        <input type="password" maxlength="100" required name="password" id="password" autocomplete="off"
                                class="form-control input-lg" placeholder="Password" tabindex="5" value="<?php $_($password, 'password'); ?>">
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                        <input type="password" maxlength="100" required name="password_confirmation"
+                        <input type="password" maxlength="100" required name="password_confirmation" autocomplete="off"
                                id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password"
                                tabindex="6" value="<?php $_($password_confirmation, 'password_confirmation'); ?>">
                     </div>

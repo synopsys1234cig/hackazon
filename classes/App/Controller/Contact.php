@@ -31,7 +31,7 @@ class Contact extends Page
                 return;
             }
         }
-        $this->view->subview = 'pages/contact';
+        // $this->view->subview = 'pages/contact';
     }
 }
 

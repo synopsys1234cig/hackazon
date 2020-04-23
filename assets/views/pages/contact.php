@@ -78,22 +78,22 @@
             l.start();
             var data = {};
             $("#contactForm").serializeArray().map(function(x){data[x.name] = x.value;}); 
-            $.ajax({
-                url: '/contact',
-                type: "POST",
-                dataType: "json",
-                //contentType: "application/json",
-                //data: JSON.stringify(data),
-                data: "data=" + JSON.stringify(data),
-                success: function(data) {
-                    $(".alert").empty().append('Thank you for your question. We will contact you as soon.').show();
-                    form.hide();
-                    repeatContactBlock.show();
-                },
-                fail: function() {
-                    $(".alert").empty().append('There is some error happened during processing your request.').show();
-                }
-            }).always(function() { l.stop(); });
+            // $.ajax({
+            //     url: '/contact',
+            //     type: "POST",
+            //     dataType: "json",
+            //     //contentType: "application/json",
+            //     //data: JSON.stringify(data),
+            //     data: "data=" + JSON.stringify(data),
+            //     success: function(data) {
+            //         $(".alert").empty().append('Thank you for your question. We will contact you as soon.').show();
+            //         form.hide();
+            //         repeatContactBlock.show();
+            //     },
+            //     fail: function() {
+            //         $(".alert").empty().append('There is some error happened during processing your request.').show();
+            //     }
+            // }).always(function() { l.stop(); });
             return false; // Will stop the submission of the form
         });
 

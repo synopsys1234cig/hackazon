@@ -29,11 +29,11 @@
             <form role="form" method="post" action="/user/newpassw" id="recoverForm">
                 <div class="form-group">
                     <label for="password">Password <span style="color: red">*</span></label>
-                    <input type="password" name="password" class="form-control" id="password">
+                    <input type="password" name="password" class="form-control" id="password" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="cpassword">Confirm Password <span style="color: red">*</span></label>
-                    <input type="password" name="cpassword" class="form-control" id="cpassword">
+                    <input type="password" name="cpassword" class="form-control" id="cpassword" autocomplete="off">
                 </div>
                 <input type="hidden" name="username" value="<?=$username?>">
                 <input type="hidden" name="recover" value="<?=$recover_passw?>">

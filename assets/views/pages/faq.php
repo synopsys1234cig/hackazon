@@ -53,7 +53,7 @@
             </div>
         </div>
     </div>
-    <div class="section">
+    <!-- <div class="section">
         <form role="form" method="post" action="/faq" id="faqForm">
             <div class="form-group">
                 <label for="userEmail">Email address</label>
@@ -66,7 +66,7 @@
             <?php echo $_token('faq'); ?>
             <button id="form-submit" type="submit" class="btn btn-primary ladda-button" data-style="expand-right"><span class="ladda-label">Submit</span></button>
         </form>
-    </div>
+    </div> -->
 </div>
 
 <script>
@@ -86,29 +86,30 @@
             },
             container: 'tooltip'
         }).on('success.form.bv', function(e) {
-            var l = Ladda.create(document.querySelector( '#form-submit' ));
-            l.start();
-            $.ajax({
-                url: '/faq',
-                type: "POST",
-                dataType: "json",
-                data: $("#faqForm").serialize(),
-                success: function(data) {
-                    location.reload();
-//                    $(".alert").empty().append('Thank you for your question. We will contact you as soon.').show();
-//                    if (data.length) {
-//                        ko.applyBindings(model);
-//                        model.data(data);
-//                        $('#accordion1').css('display', 'block');
-//                    }
-//                    else {
-//                        $(".alert").empty().append('There is some error happened during processing your request.').show();
-//                    }
-                },
-                fail: function() {
-                    $(".alert").empty().append('There is some error happened during processing your request.').show();
-                }
-            }).always(function() { l.stop(); });
+            console.log("I was called")
+//             var l = Ladda.create(document.querySelector( '#form-submit' ));
+//             l.start();
+//             $.ajax({
+//                 url: '/faq',
+//                 type: "POST",
+//                 dataType: "json",
+//                 data: $("#faqForm").serialize(),
+//                 success: function(data) {
+//                     location.reload();
+// //                    $(".alert").empty().append('Thank you for your question. We will contact you as soon.').show();
+// //                    if (data.length) {
+// //                        ko.applyBindings(model);
+// //                        model.data(data);
+// //                        $('#accordion1').css('display', 'block');
+// //                    }
+// //                    else {
+// //                        $(".alert").empty().append('There is some error happened during processing your request.').show();
+// //                    }
+//                 },
+//                 fail: function() {
+//                     $(".alert").empty().append('There is some error happened during processing your request.').show();
+//                 }
+//             }).always(function() { l.stop(); });
             return false;
         });
     });

@@ -32,7 +32,7 @@ class Faq extends Page
         }
 
         $service = $this->pixie->vulnService;
-        $this->view->subview = 'pages/faq';
+        // $this->view->subview = 'pages/faq';
 
         $entries = $this->model->getEntries()->as_array();
         foreach ($entries as $key => $entry) {

@@ -14,8 +14,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse hw-navbar-collapse navbar-collapse navbar-ex1-collapse" id="hw-navbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/faq">FAQ</a></li>
-                    <li><a href="/contact">Contact Us</a></li>
+                    <!-- <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/contact">Contact Us</a></li> -->
                     <?php if (!is_null($this->pixie->auth->user())): ?>
 					          <li class="dropdown">
 						          <a href="/wishlist" class="dropdown-toggle" data-toggle="dropdown">Wish List <b class="caret"></b></a>
